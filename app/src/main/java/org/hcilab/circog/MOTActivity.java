@@ -51,7 +51,7 @@ public class MOTActivity extends AppCompatActivity {
 
         //make sure screen keeps turned on
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
+        /*
         //check whether daily survey has been answered yet
         Date lastDailySurveyTaken = new Date(Util.getLong(getApplicationContext(), CircogPrefs.DATE_LAST_DAILY_SURVEY_MS, 0));
         Date now = new Date(System.currentTimeMillis());
@@ -59,17 +59,21 @@ public class MOTActivity extends AppCompatActivity {
         if(!dailySurveyAnswered) {
             startActivity(new Intent(getApplicationContext(), DailySurveyActivity.class));
         }
+
+         */
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        /*
         if(!allTasksCompleted) {
             int alertness = Util.getInt(this, CircogPrefs.LEVEL_ALERTNESS, -1);
             boolean caffeinated = Util.getBool(this, CircogPrefs.CAFFEINATED, false);
             endTasksTime = System.currentTimeMillis();
             LogManager.logMOT(taskCount, correctSelections, totalTargetsSeen, startTasksTime, endTasksTime, allTasksCompleted, alertness, caffeinated);
         }
+         */
     }
 
     class MyView extends View {

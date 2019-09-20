@@ -138,7 +138,7 @@ public class GoNoGoActivity extends AppCompatActivity {
                 numberOfTaps++;
             }
         });
-
+        /*
         //check whether daily survey has been answered yet
         Date lastDailySurveyTaken = new Date(Util.getLong(getApplicationContext(), CircogPrefs.DATE_LAST_DAILY_SURVEY_MS, 0));
         Date now = new Date(System.currentTimeMillis());
@@ -146,13 +146,17 @@ public class GoNoGoActivity extends AppCompatActivity {
         if(!dailySurveyAnswered) {
             startActivity(new Intent(getApplicationContext(), DailySurveyActivity.class));
         }
+         */
 
+        /*
         //show alert assessments
         ArrayList<Integer> tasklist = TaskList.getTaskList(getApplicationContext());
         if(tasklist.size()==MainActivity.COMPLETE_TASKLIST.length) {
             final Intent intent = new Intent(this, AlertnessSurveyActivity.class);
             startActivity(intent);
         }
+
+         */
     }
 
     public void StartStopButtonClicked(final View view) {

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import org.hcilab.log.Logger;
 
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int[] COMPLETE_TASKLIST = {PVTActivity.TASK_ID, GoNoGoActivity.TASK_ID, MOTActivity.TASK_ID}; //{MOTActivity.TASK_ID};
 
+    Button pvt,nogo,mot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,8 +33,30 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.launch_test);
 
+        pvt = (Button) findViewById(R.id.test1);
+        nogo = (Button) findViewById(R.id.test2);
+        mot = (Button) findViewById(R.id.test3);
+
+        pvt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchPVT(findViewById(android.R.id.content));
+            }
+        });
+        nogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchGoNoGo(findViewById(android.R.id.content));
+            }
+        });
+        mot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchMOT(findViewById(android.R.id.content));
+            }
+        });
         TaskList.initTaskList(getApplicationContext());
     }
 
@@ -52,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         //make sure NotificationTriggerService is running
         startService(new Intent(this, NotificationTriggerService.class));
-
+        /*
         //check whether demographics have been recorded
         boolean provided = Util.getBool(getApplicationContext(), CircogPrefs.DEMOGRAPHICS_PROVIDED, false);
 
@@ -73,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        */
 
     }
 

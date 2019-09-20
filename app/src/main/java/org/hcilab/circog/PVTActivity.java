@@ -165,7 +165,7 @@ public class PVTActivity extends AppCompatActivity {
 
             }
         });
-
+        /*
         //check whether daily survey has been answered yet
         Date lastDailySurveyTaken = new Date(Util.getLong(getApplicationContext(), CircogPrefs.DATE_LAST_DAILY_SURVEY_MS, 0));
         Date now = new Date(System.currentTimeMillis());
@@ -175,6 +175,9 @@ public class PVTActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), DailySurveyActivity.class));
         }
 
+         */
+
+        /*
         //show alert assessments
         ArrayList<Integer> tasklist = TaskList.getTaskList(getApplicationContext());
         if(tasklist.size()==MainActivity.COMPLETE_TASKLIST.length) {
@@ -182,6 +185,8 @@ public class PVTActivity extends AppCompatActivity {
             final Intent intent = new Intent(this, AlertnessSurveyActivity.class);
             startActivity(intent);
         }
+
+         */
     }
 
     private void scheduleNextTask() {
