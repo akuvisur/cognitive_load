@@ -15,7 +15,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.hcilab.circog.MOTActivity">
+    tools:context="org.ubicomp.attentiontest.MOTActivity">
 
     <LinearLayout
         style="@style/width_match_parent_max_400"

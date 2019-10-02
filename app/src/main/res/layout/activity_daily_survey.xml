@@ -11,7 +11,7 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:layout_gravity="top|center"
-    tools:context="org.hcilab.circog.DailySurveyActivity">
+    tools:context="org.ubicomp.attentiontest.DailySurveyActivity">
 
     <TextView
         android:layout_width="match_parent"

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.hcilab.circog">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.ubicomp.attentiontest">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/circogicon"
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="org.ubicomp.attentiontest.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,30 +23,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PVTActivity"
+            android:name="org.ubicomp.attentiontest.PVTActivity"
             android:label="@string/title_activity_pvt"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GoNoGoActivity" />
-        <activity android:name=".MOTActivity" />
+        <activity android:name="org.ubicomp.attentiontest.GoNoGoActivity" />
+        <activity android:name="org.ubicomp.attentiontest.MOTActivity" />
 
         <service
-            android:name=".NotificationTriggerService"
+            android:name="org.ubicomp.attentiontest.NotificationTriggerService"
             android:label="@string/notification_service_name"
             android:process=":notification_process" />
 
-        <activity android:name=".DailySurveyActivity" />
+        <activity android:name="org.ubicomp.attentiontest.DailySurveyActivity" />
         <activity
-            android:name=".AlertnessSurveyActivity"
+            android:name="org.ubicomp.attentiontest.AlertnessSurveyActivity"
             android:theme="@android:style/Theme.Dialog" />
-        <activity android:name=".ConsentActivity" />
+        <activity android:name="org.ubicomp.attentiontest.ConsentActivity" />
 
-        <receiver android:name=".AutoStart">
+        <receiver android:name="org.ubicomp.attentiontest.AutoStart">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".EnterDemographicsActivity"></activity>
     </application>
 
 </manifest>

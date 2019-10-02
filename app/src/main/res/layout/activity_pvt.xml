@@ -37,7 +37,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.hcilab.circog.PVTActivity">
+    tools:context="org.ubicomp.attentiontest.PVTActivity">
 
     <LinearLayout
         style="@style/width_match_parent_max_400"

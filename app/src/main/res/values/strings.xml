@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Circog</string>
+    <string name="app_name">CIRCOG Attention Test</string>
     <string name="action_settings">Settings</string>
 
     <string name="wait">Please wait</string>
@@ -54,8 +54,12 @@
     <!--<string name="notif_title">Time for a quick task!</string>-->
     <string name="notification_service_name">Circog Notification Scheduler</string>
     <string name="notif_title">Time for some attention tasks!</string>
-    <string name="notif_content">Click to assess your current concentration levels.</string>
+    <string name="notif_content">Click here to assess your current concentration level</string>
+    <string name="channel_name">Circog reminder notification</string>
+    <string name="channel_description">This channel is used to send reminder notifications to perform cognitive load tests</string>
 
+    <string name="notification_title">Attention tasks</string>
+    <string name="notification_message">This application is running on the background</string>
     <!-- Daily Survey -->
     <string name="title_activity_survey">Survey</string>
     <string name="daily_survey_title">Quick daily sleep assessment!</string>
@@ -76,6 +80,9 @@
     <string name="task_survey_alert">super alert</string>
     <string name="task_survey_error_alert">Oops! Please specify your level of alertness.</string>
     <string name="task_survey_caffeination">I had a caffeinated drink within the last hour.</string>
+    <string name="task_survey_nicotine">I had a product that contained nicotine within the last hour.</string>
+    <string name="task_survey_food">I had a meal or a large snack within the last hour.</string>
+    <string name="task_survey_alcohol">I had one or more units of alcohol within the last hour.</string>
 
     <string name="survey_strongly_disagree">Strongly disagree</string>
     <string name="survey_strongly_agree">Strongly agree</string>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "475864795168",
+    "firebase_url": "https://oura-collab-cognitive-load.firebaseio.com",
+    "project_id": "oura-collab-cognitive-load",
+    "storage_bucket": "oura-collab-cognitive-load.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475864795168:android:721eebf76fd4631cbe9445",
+        "android_client_info": {
+          "package_name": "org.ubicomp.attentiontest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475864795168-3qseb3nr0ag0edcfq66nf67ov5of2i0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4CP0JZyZD5tUEAiNKiNPOYLjP4nZv1q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475864795168-3qseb3nr0ag0edcfq66nf67ov5of2i0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
