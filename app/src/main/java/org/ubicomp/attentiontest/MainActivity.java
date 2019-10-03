@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.launch_test);
+        setContentView(R.layout.activity_main);
 
-        pvt = (Button) findViewById(R.id.test1);
-        nogo = (Button) findViewById(R.id.test2);
-        mot = (Button) findViewById(R.id.test3);
+        pvt = findViewById(R.id.btn_launch_pvt);
+        nogo = findViewById(R.id.btn_launch_gonogo);
+        mot = findViewById(R.id.btn_launch_mot);
 
         pvt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,24 @@ public class MainActivity extends AppCompatActivity {
 
         //make sure NotificationTriggerService is running
         startService(new Intent(this, NotificationTriggerService.class));
+
+        // check that email exists
+        String email = Util.getEmail(this);
+        if (email.length() < 1) {
+            //show popup
+            final Intent intent = new Intent(this, EmailSurveyActivity.class);
+            startActivity(intent);
+        }
+        TextView emailText = findViewById(R.id.participation_email_value);
+        emailText.setText(email);
+
+        emailText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(getApplicationContext(), EmailSurveyActivity.class);
+                startActivity(intent);
+            }
+        });
         /*
         //check whether demographics have been recorded
         boolean provided = Util.getBool(getApplicationContext(), CircogPrefs.DEMOGRAPHICS_PROVIDED, false);

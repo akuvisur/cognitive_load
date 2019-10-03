@@ -23,6 +23,8 @@
     <string name="task_dialog_next_tasks">Congratulations! You made it! %1$d tasks left.</string>
     <string name="study_completed">Congratulations! You have officially completed the minimum amount of days required for this study. However, you can keep using the app. Thanks!</string>
 
+    <string name="participation_email">You registered to this study with the following email address:</string>
+
     <!--PVT ACTIVITY-->
     <string name="pvt_explanation">Tap the screen as soon as a number appears. Numbers will appear at random times. The test lasts about 2 minutes.</string>
     <string name="pvt_btn_start">Start</string>
@@ -98,6 +100,9 @@
     <string name="survey_error_message_2">Please rate the second statement.</string>
     <string name="survey_error_message_3">Please rate the third statement.</string>
     <string name="survey_thanks">Thanks!</string>
+
+    <!-- Email survey -->
+    <string name="survey_email">Please give an email address associated to the study you are participating in:</string>
 
     <!-- Consent Form-->
     <string name="con_title">Consent to Participate</string>

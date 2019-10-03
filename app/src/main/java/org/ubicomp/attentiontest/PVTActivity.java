@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Random;
 
 public class PVTActivity extends AppCompatActivity {
@@ -115,6 +116,9 @@ public class PVTActivity extends AppCompatActivity {
         allTasksCompleted = false;
         clicksPenalized = false;
 
+        // remove notification
+        NotificationTriggerService.removeNotification(getApplicationContext());
+
         //make sure screen keeps turned on
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -130,8 +134,8 @@ public class PVTActivity extends AppCompatActivity {
             Log.i(TAG, "number of total tasks generated: " + total_tasks);
         }
 
-        ticker = (TextView) findViewById(R.id.ticker);
-        btnStartStop = (Button) findViewById(R.id.btn_start_stop);
+        ticker = findViewById(R.id.ticker);
+        btnStartStop = findViewById(R.id.btn_start_stop);
 
         ticker.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -247,8 +251,8 @@ public class PVTActivity extends AppCompatActivity {
         Log.d(TAG, "Starting result storing");
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        ReactionTestResult result = new ReactionTestResult("email goes here", measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
-        mDatabase.child("reaction_tests").setValue(result)
+        ReactionTestResult result = new ReactionTestResult(Util.getEmail(getApplicationContext()), measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
+        mDatabase.child("reaction_tests").child(String.valueOf(System.currentTimeMillis())).setValue(result)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -261,7 +265,6 @@ public class PVTActivity extends AppCompatActivity {
                         Log.d(TAG, "result upload failed");
                     }
                 });
-        ;
         mDatabase.child("reaction_tests").push();
     }
 

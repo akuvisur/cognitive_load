@@ -50,6 +50,25 @@ tools:context=".MainActivity">
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="5sp"
+        android:text="@string/participation_email"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:background="@color/cardview_dark_background"
+        android:textColor="@color/cardview_light_background"
+        android:text=""
+        android:id="@+id/participation_email_value"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
         android:text="@string/main_title"
         android:textSize="16sp" />
 

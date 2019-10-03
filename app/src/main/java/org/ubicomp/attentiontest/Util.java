@@ -97,6 +97,18 @@ public class Util {
         return result;
     }
 
+    public static void setEmail(Context context, String email) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putString("email", email);
+        edit.commit();
+    }
+
+    public static String getEmail(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString("email", "");
+    }
+
     public static void putBool(Context context, String key, boolean value) {
         SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor edit = prefs.edit();
