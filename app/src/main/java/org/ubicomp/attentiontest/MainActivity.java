@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         nogo = findViewById(R.id.btn_launch_gonogo);
         mot = findViewById(R.id.btn_launch_mot);
 
+        nogo.setEnabled(false);
+        mot.setEnabled(false);
+
         pvt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

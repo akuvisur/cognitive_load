@@ -14,7 +14,14 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -40,7 +47,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     public static boolean notificationIsScheduled;
 
     // Hours in which the experience sampling may be active
-    private static final int START_HOUR = 8;
+    private static final int START_HOUR = 7;
     private static final int END_HOUR = 23;
 
     private static final int MIN_DELAY = 10; //seconds
@@ -77,6 +84,9 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         if(DEBUG_MODE) {
             Log.i(TAG, "onCreate()");
         }
+
+        FirebaseApp.initializeApp(getApplicationContext());
+
         createNotificationChannel();
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
@@ -106,9 +116,6 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         if(DEBUG_MODE) {
             Log.i(TAG, "onStartCommand()");
         }
-
-//        scheduleNotification();
-
         return START_STICKY;
     }
 
@@ -140,12 +147,6 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
             return false;
         }
          */
-        if (notificationIsShown) {
-            if(DEBUG_MODE) {
-                Log.i(TAG, "notification aborted - already shown");
-            }
-            return false;
-        }
 
         if (!isTimingAllowed()) {
             if(DEBUG_MODE) {
@@ -180,47 +181,40 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         return true;
     }
 
-    private boolean WAITING_FOR_NEXT_DAY = true;
     private void scheduleNotification() {
-
-        notificationIsScheduled = true;
 
         //TODO: spread this more across day?
         int delayMs;
         // between two and three hours?
-        int randomDelay = Util.randInt(60, SEC_MS * 60 * 30); //0 - 30mins
+        int randomDelay = Util.randInt(60, SEC_MS * 60 * 60); //0 - 60mins
         if(DEBUG_MODE) {
             delayMs = EVERY_MINUTE/2;
         } else {
-            delayMs = EVERY_HOUR/2 + randomDelay;
+            delayMs = EVERY_HOUR + randomDelay;
         }
 
         if(CircogPrefs.DEBUG_MODE) {
             Log.i(TAG, "scheduling notification - due in " + Util.format((double) delayMs / MIN_MS) + " min");
         }
-
+        Log.i(TAG, "scheduling notification - due in " + Util.format((double) delayMs / MIN_MS) + " min");
         if (showNotifTimer != null) {
             showNotifTimer.cancel();
             showNotifTimer.purge();
         }
 
-
         showNotifTimer = new Timer();
-        Calendar now = Calendar.getInstance();
-        // dont schedule notifications during the night hours
-        if (now.get(Calendar.HOUR_OF_DAY) < 23 & now.get(Calendar.HOUR_OF_DAY) > 7) {
+        if (!notificationIsScheduled) {
             showNotifTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     notificationIsScheduled = false;
                     onNotificationTimerFired();
-                    }
+                }
 
-           }, delayMs);
+            }, delayMs);
         }
-        else {
-            WAITING_FOR_NEXT_DAY = true;
-        }
+
+        notificationIsScheduled = true;
     }
 
     private void onNotificationTimerFired() {
@@ -336,6 +330,25 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
+
+
+        NotificationDelivered n = new NotificationDelivered(Util.getEmail(getApplicationContext()), System.currentTimeMillis());
+
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("notification_delivery").child(String.valueOf(System.currentTimeMillis())).setValue(n)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "notification delivery upload success");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "notifiation delivery upload failed");
+                    }
+                });
+        mDatabase.child("notification_delivery").push();
     }
 
     private void createNotificationChannel() {
@@ -397,26 +410,24 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
                 SCREEN_ON = true;
                 // this can trigger during the night but wont actually show a notification
                 // schedule the first notification 20-40 mins after 'waking up'
-                if (WAITING_FOR_NEXT_DAY) {
-                    Log.d(TAG, "Was waiting for the next day to start schedule");
-                    WAITING_FOR_NEXT_DAY = false;
-                    // initialise the schedule if its the first screen even of the day
-                    if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) > 7) {
-                        Log.d(TAG, "Starting a new notification schedule");
-                        scheduleNotification();
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    Thread.sleep(INITIAL_NOTIFICATION_DELAY + Util.randInt(0, SEC_MS * 60 * 20));
-                                    showNotification();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
+
+                // initialise the schedule if its the first screen even of the day
+                if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) > 7) {
+                    Log.d(TAG, "Starting a new notification schedule");
+                    scheduleNotification();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                Thread.sleep(INITIAL_NOTIFICATION_DELAY + Util.randInt(0, SEC_MS * 60 * 20));
+                                onNotificationTimerFired();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
-                        }).start();
-                    }
+                        }
+                    }).start();
                 }
+
 
                 // always show a notification if user spends more than five minutes on the phone
                 new Thread(new Runnable() {
