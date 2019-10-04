@@ -7,8 +7,10 @@ public class NotificationDelivered {
 
     public String email;
     public long timestamp;
+    public String device_id;
 
-    public NotificationDelivered(String email, long timestamp) {
+    public NotificationDelivered(String device_id, String email, long timestamp) {
+        this.device_id = device_id;
         this.email = email;
         this.timestamp = timestamp;
     }

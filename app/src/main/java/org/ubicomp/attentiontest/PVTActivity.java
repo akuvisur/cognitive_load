@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -251,7 +252,8 @@ public class PVTActivity extends AppCompatActivity {
         Log.d(TAG, "Starting result storing");
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        ReactionTestResult result = new ReactionTestResult(Util.getEmail(getApplicationContext()), measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
+        ReactionTestResult result = new ReactionTestResult(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
         mDatabase.child("reaction_tests").child(String.valueOf(System.currentTimeMillis())).setValue(result)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

@@ -1,5 +1,7 @@
 package org.ubicomp.attentiontest;
 
+import android.provider.Settings;
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.ArrayList;
@@ -18,15 +20,13 @@ public class ReactionTestResult {
     public boolean nicotine;
     public boolean food;
     public boolean alcohol;
+    public String device_id;
 
-    public ReactionTestResult() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
-    }
-
-    public ReactionTestResult(String email, ArrayList<Long> measurements, int numberOfTaps, long startTasksTime,
+    public ReactionTestResult(String device_id, String email, ArrayList<Long> measurements, int numberOfTaps, long startTasksTime,
                               long endTasksTime, boolean taskCompleted, int alertness, boolean caffeinated,
                               boolean nicotine, boolean food, boolean alcohol) {
 
+        this.device_id = device_id;
         this.email = email;
         this.measurements = measurements;
         this.numberOfTaps = numberOfTaps;

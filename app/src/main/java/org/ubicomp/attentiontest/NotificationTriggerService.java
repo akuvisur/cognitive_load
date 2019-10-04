@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -331,8 +332,8 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
 
         notificationManager.notify(NOTIFICATION_ID, builder.build());
 
-
-        NotificationDelivered n = new NotificationDelivered(Util.getEmail(getApplicationContext()), System.currentTimeMillis());
+        NotificationDelivered n = new NotificationDelivered(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), System.currentTimeMillis());
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("notification_delivery").child(String.valueOf(System.currentTimeMillis())).setValue(n)
