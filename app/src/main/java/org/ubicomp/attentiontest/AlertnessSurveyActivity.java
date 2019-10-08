@@ -26,6 +26,8 @@ public class AlertnessSurveyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alertness_survey);
 
+        Util.circogIsRunning(getApplicationContext(), true);
+
         //check whether choice is made and log it
         buttonSubmit = (Button) findViewById(R.id.survey_send);
         radioAlertness = (RadioGroup) findViewById(R.id.survey_rg_1);
@@ -65,5 +67,11 @@ public class AlertnessSurveyActivity extends Activity {
         if(completed) {
             studyCompleted.setVisibility(View.VISIBLE);
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Util.circogIsRunning(getApplicationContext(), false);
     }
 }

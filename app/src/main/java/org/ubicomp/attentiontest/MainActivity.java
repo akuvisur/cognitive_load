@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "+ onResume()");
         }
 
+        Util.circogIsRunning(getApplicationContext(), true);
         //track whether app has been opened through a notification or explicit app launch
         boolean notifTriggered = Util.getBool(getApplicationContext(), CircogPrefs.NOTIF_CLICKED, false);
         LogManager.logAppLaunch(notifTriggered);
@@ -200,5 +201,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        Util.circogIsRunning(getApplicationContext(), false);
     }
 }

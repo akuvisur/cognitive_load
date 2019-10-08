@@ -3,6 +3,7 @@ package org.ubicomp.attentiontest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -108,6 +109,8 @@ public class PVTActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(R.layout.activity_pvt);
         running = false;
         startTime = 0;
@@ -268,6 +271,9 @@ public class PVTActivity extends AppCompatActivity {
                     }
                 });
         mDatabase.child("reaction_tests").push();
+
+        // mark when the last task was done
+        Util.storeLastTask(getApplicationContext());
     }
 
     /**
@@ -317,6 +323,7 @@ public class PVTActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        Util.circogIsRunning(getApplicationContext(), true);
         //reset all values on resume
         running = false;
         startTime = 0;
@@ -351,6 +358,7 @@ public class PVTActivity extends AppCompatActivity {
     @Override
     public void onPause() {
         super.onPause();
+        Util.circogIsRunning(getApplicationContext(), false);
         cancelTimers();
         btnStartStop.setVisibility(View.VISIBLE);
         btnStartStop.setText(R.string.pvt_btn_start);

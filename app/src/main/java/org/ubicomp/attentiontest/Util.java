@@ -113,7 +113,7 @@ public class Util {
         SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor edit = prefs.edit();
         edit.putBoolean(key, value);
-        edit.commit();
+        edit.apply();
     }
 
     public static boolean getBool(Context context, String key, boolean defValue) {
@@ -123,6 +123,46 @@ public class Util {
             Log.i(TAG, "getBool for key: " + key + " (result: " + result + ", default: " + defValue + ")");
         }
         return result;
+    }
+
+    public static long getLastTask(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        long result = prefs.getLong("last_task", 0);
+        return result;
+    }
+
+
+    public static void storeLastTask(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putLong("last_task", System.currentTimeMillis());
+        edit.apply();
+    }
+
+    public static void putLastNotification(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putLong("last_notification", System.currentTimeMillis());
+        edit.apply();
+    }
+
+    public static long getLastNotification(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        long result = prefs.getLong("last_notification", 0);
+        return result;
+    }
+
+    public static boolean isCircogRunning(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        boolean result = prefs.getBoolean("running", false);
+        return result;
+    }
+
+    public static void circogIsRunning(Context context, boolean running) {
+        SharedPreferences prefs = context.getSharedPreferences(CircogPrefs.PREFERENCES_NAME, Context.MODE_MULTI_PROCESS); //PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putBoolean("running", running);
+        edit.apply();
     }
 
     public static long getLong(Context context, String key, long defValue) {

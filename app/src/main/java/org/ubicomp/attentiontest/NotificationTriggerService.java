@@ -139,6 +139,10 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
             }
             return false;
         }
+
+        if (minTimeSincePriorTask()) {
+            return false;
+        }
         // we dont require consent for this application (given for all in signing)
         /*
         if (!Util.getBool(getApplicationContext(), PREF_CONSENT_GIVEN, false)) {
@@ -148,6 +152,10 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
             return false;
         }
          */
+
+        if (minTimeSincePriorNotification()) {
+
+        }
 
         if (!isTimingAllowed()) {
             if(DEBUG_MODE) {
@@ -182,12 +190,29 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         return true;
     }
 
+    // okay this naming policy is a little quirky
+    // returns true if the appropriate time (2 hours) has NOT passed
+    private boolean minTimeSincePriorTask() {
+        if ((System.currentTimeMillis() - Util.getLastTask(getApplicationContext())) < 1000*60*120) {
+            return true;
+        }
+        return false;
+    }
+
+    // only show notification if 20mins since prior one
+    private boolean minTimeSincePriorNotification() {
+        if ((System.currentTimeMillis() - Util.getLastNotification(getApplicationContext())) < 1000*60*20) {
+            return true;
+        }
+        return false;
+    }
+
     private void scheduleNotification() {
 
         //TODO: spread this more across day?
         int delayMs;
         // between two and three hours?
-        int randomDelay = Util.randInt(60, SEC_MS * 60 * 60); //0 - 60mins
+        int randomDelay = Util.randInt(60, SEC_MS * 60 * 60); //60 - 120mins
         if(DEBUG_MODE) {
             delayMs = EVERY_MINUTE/2;
         } else {
@@ -274,7 +299,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
             Log.i(TAG, "applicationIsOpen()");
         }
 
-        return false;
+        return Util.isCircogRunning(getApplicationContext());
     }
 
     public void triggerNotification() {
@@ -350,6 +375,8 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
                     }
                 });
         mDatabase.child("notification_delivery").push();
+
+        Util.putLastNotification(getApplicationContext());
     }
 
     private void createNotificationChannel() {
@@ -437,7 +464,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
                         try {
                             Thread.sleep(PHONE_USAGE_NOTIFICATION_DELAY + Util.randInt(0, SEC_MS * 60 * 10)); //5 - 15min random delay);
                             Log.d(TAG, "Showing a notification after 5 minutes of use!");
-                            if(SCREEN_ON) showNotification();
+                            if(SCREEN_ON) onNotificationTimerFired();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

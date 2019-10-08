@@ -6,14 +6,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/DailySurveyActivity.java" line="16" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2bb670f-9d50-4d79-9628-8d785044fa95" name="Default Changelist" comment="- email storage&#10;- fixed firebase data storage (was missing IDs)&#10;- everything &quot;seems&quot; good for testing">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java" afterDir="false" />
+    <list default="true" id="e2bb670f-9d50-4d79-9628-8d785044fa95" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -21,9 +20,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +37,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="f254b457" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -52,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
+            <state relative-caret-position="298">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
             </state>
           </provider>
         </entry>
@@ -61,22 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="115" column="19" lean-forward="true" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6895#7108#0" expanded="true" />
-                <element signature="e#7107#7108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="259">
+              <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,9 +74,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1020">
+              <caret line="75" column="60" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/EmailSurveyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="255">
               <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="54" column="29" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="29" />
+            <state relative-caret-position="361">
+              <caret line="119" column="34" lean-forward="true" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+            <state relative-caret-position="1156">
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/CircogPrefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="340">
+              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -141,13 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onDestroy</find>
-      <find>NotificationCompat</find>
-      <find>notificationCh</find>
-      <find>onCre</find>
-      <find>Util</find>
-      <find>isSameDay()</find>
-      <find>showNo</find>
       <find>triggerN</find>
       <find>Random</find>
       <find>sendNo</find>
@@ -156,7 +171,6 @@
       <find>debug</find>
       <find>consent</find>
       <find>alertness</find>
-      <find>onCreate</find>
       <find>store res</find>
       <find>Toast</find>
       <find>AlertnessSurvey</find>
@@ -168,10 +182,24 @@
       <find>showNotifi</find>
       <find>triggerNo</find>
       <find>schedule</find>
-      <find>onCrea</find>
       <find>showNotificatio</find>
       <find>DEBUG</find>
+      <find>screen ON</find>
+      <find>onPause</find>
+      <find>onCrea</find>
+      <find>onDe</find>
+      <find>shownotification</find>
+      <find>showNotification</find>
+      <find>showNotificiation</find>
+      <find>onRe</find>
+      <find>onCreate</find>
     </findStrings>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Users\akuvi\Google Drive\Work\Oura Mobility\APK\circog.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,19 +226,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/task_survey.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_alertness_survey.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/LogManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/email_survey.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/EmailSurveyActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/CircogPrefs.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/CircogPrefs.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" />
       </list>
     </option>
   </component>
@@ -225,35 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="ubicomp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="ubicomp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="attentiontest" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -298,6 +297,35 @@
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="androidTest" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="ubicomp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="circog" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="ubicomp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="attentiontest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,6 +419,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ExportApk.ApkPath" value="C:\Users\akuvi\AndroidStudioProjects\circog\app" />
+    <property name="ExportApk.BuildVariants" value="debug" />
+    <property name="ExportApk.SignV2" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
@@ -507,7 +538,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570099203817</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- notification logging">
+      <created>1570192475215</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570192475216</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- add device_id to logs">
+      <created>1570194128843</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570194128843</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -524,9 +569,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.75702477" visible="true" weight="0.2196162" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7558946" visible="true" weight="0.2196162" />
       <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Build Variants" order="3" sideWeight="0.2429752" side_tool="true" visible="true" weight="0.2196162" />
+      <window_info id="Build Variants" order="3" sideWeight="0.24512535" side_tool="true" weight="0.2196162" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
@@ -535,12 +580,12 @@
       <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.4978678" weight="0.32777777" />
       <window_info anchor="bottom" id="TODO" order="1" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.32777777" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.29744136" side_tool="true" visible="true" weight="0.32777777" />
-      <window_info anchor="bottom" id="Build" order="4" sideWeight="0.6775053" weight="0.37333333" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="3" sideWeight="0.30597016" side_tool="true" visible="true" weight="0.37222221" />
+      <window_info anchor="bottom" id="Build" order="4" sideWeight="0.69402987" visible="true" weight="0.37222221" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4978678" weight="0.3288889" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" />
-      <window_info anchor="bottom" x="22" y="372" width="1876" height="295" id="Logcat" order="7" sideWeight="0.70255864" visible="true" weight="0.32777777" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" x="22" y="372" width="1876" height="295" id="Logcat" order="7" sideWeight="0.7020256" weight="0.29313725" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -581,10 +626,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="- fixed notification service&#10;- firebase intergration" />
     <MESSAGE value="- email storage&#10;- fixed firebase data storage (was missing IDs)&#10;- everything &quot;seems&quot; good for testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="- email storage&#10;- fixed firebase data storage (was missing IDs)&#10;- everything &quot;seems&quot; good for testing" />
+    <MESSAGE value="- notification logging" />
+    <MESSAGE value="- add device_id to logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add device_id to logs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-22/android.jar!/android/view/View.class">
@@ -719,12 +766,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/launch_test.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/task_survey.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pvt.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ConsentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -788,24 +835,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_email_survey.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_alertness_survey.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="221" selection-end-column="43" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/email_survey.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_consent.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="75" column="60" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/EmailSurveyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="255">
           <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -815,42 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="108" column="44" selection-start-line="108" selection-start-column="44" selection-end-line="108" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="29" />
+        <state relative-caret-position="1156">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,39 +911,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/CircogPrefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="340">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        <state relative-caret-position="298">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_consent.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="115" column="19" lean-forward="true" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+        <state relative-caret-position="259">
+          <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6895#7108#0" expanded="true" />
-            <element signature="e#7107#7108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="361">
+          <caret line="119" column="34" lean-forward="true" selection-start-line="119" selection-start-column="34" selection-end-line="119" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
