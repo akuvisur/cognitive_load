@@ -61,6 +61,8 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     protected static final int      EVERY_HOUR                      = 60 * 60 * SEC_MS;
     protected static final int      EVERY_MINUTE                    = 60 * SEC_MS;
 
+    private static final int        NOTIFICATION_DELAY              = MIN_MS * 20;
+    private static final int        TASK_DELAY                      = EVERY_HOUR * 2;
     private static final int		CANCEL_NOTIFICATION_DELAY_MS	= MIN_MS * 5; //5
 
     public NotificationTriggerService() {
@@ -154,7 +156,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
          */
 
         if (minTimeSincePriorNotification()) {
-
+            return false;
         }
 
         if (!isTimingAllowed()) {
@@ -193,7 +195,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     // okay this naming policy is a little quirky
     // returns true if the appropriate time (2 hours) has NOT passed
     private boolean minTimeSincePriorTask() {
-        if ((System.currentTimeMillis() - Util.getLastTask(getApplicationContext())) < 1000*60*120) {
+        if ((System.currentTimeMillis() - Util.getLastTask(getApplicationContext())) < TASK_DELAY) {
             return true;
         }
         return false;
@@ -201,7 +203,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
 
     // only show notification if 20mins since prior one
     private boolean minTimeSincePriorNotification() {
-        if ((System.currentTimeMillis() - Util.getLastNotification(getApplicationContext())) < 1000*60*20) {
+        if ((System.currentTimeMillis() - Util.getLastNotification(getApplicationContext())) < NOTIFICATION_DELAY) {
             return true;
         }
         return false;
@@ -212,7 +214,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         //TODO: spread this more across day?
         int delayMs;
         // between two and three hours?
-        int randomDelay = Util.randInt(60, SEC_MS * 60 * 60); //60 - 120mins
+        int randomDelay = Util.randInt(TASK_DELAY, EVERY_HOUR); //120 - 180mins
         if(DEBUG_MODE) {
             delayMs = EVERY_MINUTE/2;
         } else {
@@ -426,8 +428,8 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     // screen sensing
     private final ScreenMonitor screenMonitor = new ScreenMonitor();
 
-    private final int INITIAL_NOTIFICATION_DELAY = 1000*60*20;
-    private final int PHONE_USAGE_NOTIFICATION_DELAY = 1000*60*5;
+    private final int INITIAL_NOTIFICATION_DELAY = NOTIFICATION_DELAY;
+    private final int PHONE_USAGE_NOTIFICATION_DELAY = MIN_MS*5;
 
     public class ScreenMonitor extends BroadcastReceiver {
         private boolean SCREEN_ON = false;
@@ -443,19 +445,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
                 if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY) > 7) {
                     Log.d(TAG, "Starting a new notification schedule");
                     scheduleNotification();
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                Thread.sleep(INITIAL_NOTIFICATION_DELAY + Util.randInt(0, SEC_MS * 60 * 20));
-                                onNotificationTimerFired();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }).start();
                 }
-
 
                 // always show a notification if user spends more than five minutes on the phone
                 new Thread(new Runnable() {
@@ -463,7 +453,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
                     public void run() {
                         try {
                             Thread.sleep(PHONE_USAGE_NOTIFICATION_DELAY + Util.randInt(0, SEC_MS * 60 * 10)); //5 - 15min random delay);
-                            Log.d(TAG, "Showing a notification after 5 minutes of use!");
+                            Log.d(TAG, "Showing a notification after 5-15 minutes of use!");
                             if(SCREEN_ON) onNotificationTimerFired();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
