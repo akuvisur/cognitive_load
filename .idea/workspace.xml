@@ -13,10 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2bb670f-9d50-4d79-9628-8d785044fa95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="455" column="60" selection-start-line="455" selection-start-column="60" selection-end-line="455" selection-end-column="60" />
+            <state relative-caret-position="160">
+              <caret line="449" column="92" selection-start-line="449" selection-start-column="92" selection-end-line="449" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
+            <state relative-caret-position="480">
               <caret line="75" column="60" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -79,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,13 +114,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="310">
+              <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3253#3367#0" expanded="true" />
+                <element signature="e#3366#3367#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,13 +230,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/EmailSurveyActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/AlertnessSurveyActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/CircogPrefs.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/Util.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java" />
       </list>
     </option>
   </component>
@@ -243,6 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,7 +335,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
@@ -521,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570521354895</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- increased notification and task delays slightly">
+      <created>1570691218713</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570691218713</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -549,8 +564,8 @@
       <window_info anchor="bottom" id="Version Control" order="0" sideWeight="0.4978678" weight="0.32777777" />
       <window_info anchor="bottom" id="TODO" order="1" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49946696" weight="0.32777777" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.30703625" side_tool="true" visible="true" weight="0.37222221" />
-      <window_info anchor="bottom" id="Build" order="4" sideWeight="0.6929638" visible="true" weight="0.37222221" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="3" sideWeight="0.3075693" side_tool="true" visible="true" weight="0.37222221" />
+      <window_info anchor="bottom" id="Build" order="4" sideWeight="0.6924307" visible="true" weight="0.37222221" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4978678" weight="0.3288889" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49946696" />
       <window_info anchor="bottom" x="22" y="372" width="1876" height="295" id="Logcat" order="7" sideWeight="0.7020256" weight="0.29313725" />
@@ -601,7 +616,8 @@
     <MESSAGE value="- notification logging" />
     <MESSAGE value="- add device_id to logs" />
     <MESSAGE value="- prevent screen orientation in test activity&#10;- prevent excess notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="- prevent screen orientation in test activity&#10;- prevent excess notifications" />
+    <MESSAGE value="- increased notification and task delays slightly" />
+    <option name="LAST_COMMIT_MESSAGE" value="- increased notification and task delays slightly" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-22/android.jar!/android/view/View.class">
@@ -649,13 +665,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/gradle-5.6.2/caches/transforms-2/files-2.1/b1d32f2afbb0c48c674c6ff88982425e/support-compat-28.0.0/jars/classes.jar!/android/support/v4/app/NotificationCompat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="2316" column="42" selection-start-line="2316" selection-start-column="42" selection-end-line="2316" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/gradle-5.6.2/caches/transforms-2/files-2.1/b1d32f2afbb0c48c674c6ff88982425e/support-compat-28.0.0/jars/classes.jar!/android/support/v4/app/NotificationCompat.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/app/Notification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -688,12 +698,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -839,26 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="75" column="60" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationDelivered.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -893,22 +883,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="160">
+          <caret line="449" column="92" selection-start-line="449" selection-start-column="92" selection-end-line="449" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/NotificationTriggerService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/ReactionTestResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="455" column="60" selection-start-line="455" selection-start-column="60" selection-end-line="455" selection-end-column="60" />
+        <state relative-caret-position="323">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="75" column="60" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/ubicomp/attentiontest/PVTActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3253#3367#0" expanded="true" />
+            <element signature="e#3366#3367#0" expanded="true" />
           </folding>
         </state>
       </provider>

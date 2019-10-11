@@ -12,6 +12,7 @@ public class ReactionTestResult {
     public String email;
     public ArrayList<Long> measurements;
     public int numberOfTaps;
+    public int numberOfErrors;
     public long startTasksTime;
     public long endTasksTime;
     public boolean taskCompleted;
@@ -22,7 +23,7 @@ public class ReactionTestResult {
     public boolean alcohol;
     public String device_id;
 
-    public ReactionTestResult(String device_id, String email, ArrayList<Long> measurements, int numberOfTaps, long startTasksTime,
+    public ReactionTestResult(String device_id, String email, ArrayList<Long> measurements, int numberOfTaps, int numberOfErrors, long startTasksTime,
                               long endTasksTime, boolean taskCompleted, int alertness, boolean caffeinated,
                               boolean nicotine, boolean food, boolean alcohol) {
 
@@ -30,6 +31,7 @@ public class ReactionTestResult {
         this.email = email;
         this.measurements = measurements;
         this.numberOfTaps = numberOfTaps;
+        this.numberOfErrors = numberOfErrors;
         this.startTasksTime = startTasksTime;
         this.endTasksTime = endTasksTime;
         this.taskCompleted = taskCompleted;

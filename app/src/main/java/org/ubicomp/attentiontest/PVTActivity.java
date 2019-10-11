@@ -48,6 +48,7 @@ public class PVTActivity extends AppCompatActivity {
     private int taskCount;
     private ArrayList<Long> measurements;
     private int numberOfTaps;
+    private int numberOfErrors;
     private boolean allTasksCompleted;
     private long startTasksTime;
     private long endTasksTime;
@@ -117,6 +118,7 @@ public class PVTActivity extends AppCompatActivity {
         taskCount = 0;
         measurements = new ArrayList<Long>();
         numberOfTaps = 0;
+        numberOfErrors = 0;
         allTasksCompleted = false;
         clicksPenalized = false;
 
@@ -176,6 +178,7 @@ public class PVTActivity extends AppCompatActivity {
                 }
 
                 if(clicksPenalized) {
+                    numberOfErrors++;
                     Toast.makeText(PVTActivity.this, R.string.pvt_premature_tap, Toast.LENGTH_SHORT).show();
                 }
 
@@ -256,7 +259,7 @@ public class PVTActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         ReactionTestResult result = new ReactionTestResult(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
+                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), measurements, numberOfTaps, numberOfErrors, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol);
         mDatabase.child("reaction_tests").child(String.valueOf(System.currentTimeMillis())).setValue(result)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
