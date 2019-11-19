@@ -32,10 +32,7 @@
             android:name=".AlertnessSurveyActivity"
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".ConsentActivity" />
-        <receiver
-            android:name=".BootReceiver"
-            android:enabled="true"
-            android:exported="true"></receiver>
+        <activity android:name=".PostTaskSurveyActivity" />
 
         <receiver android:name=".AutoStart">
             <intent-filter>

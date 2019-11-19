@@ -24,12 +24,12 @@ public class EmailSurveyActivity extends Activity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (email.getText().length() > 5) {
+                if (email.getText().length() > 2) {
                     Util.setEmail(getApplicationContext(), email.getText().toString());
                     finish();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Please fill in your email address before submitting", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Please fill in your participant ID before submitting", Toast.LENGTH_LONG).show();
                 }
             }
         });

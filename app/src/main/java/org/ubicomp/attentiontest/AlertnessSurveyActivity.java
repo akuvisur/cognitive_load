@@ -2,12 +2,15 @@ package org.ubicomp.attentiontest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
 
 import androidx.cardview.widget.CardView;
+
+import static android.content.ContentValues.TAG;
 
 public class AlertnessSurveyActivity extends Activity {
 
@@ -48,7 +51,7 @@ public class AlertnessSurveyActivity extends Activity {
                 int alertness = Util.getRating(radioAlertness);
 
                 Util.putInt(getApplicationContext(),CircogPrefs.LEVEL_ALERTNESS,alertness);
-
+                Log.d(TAG, "Alertness:" + alertness);
                 Util.putBool(getApplicationContext(), CircogPrefs.CAFFEINATED, caffeination.isChecked());
                 Util.putBool(getApplicationContext(), CircogPrefs.NICOTINE, nicotine.isChecked());
                 Util.putBool(getApplicationContext(), CircogPrefs.FOOD, food.isChecked());

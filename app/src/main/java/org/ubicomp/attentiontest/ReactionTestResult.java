@@ -10,22 +10,24 @@ import java.util.ArrayList;
 public class ReactionTestResult {
 
     public String email;
-    public ArrayList<Long> measurements;
+    public String measurements;
     public int numberOfTaps;
     public int numberOfErrors;
     public long startTasksTime;
     public long endTasksTime;
     public boolean taskCompleted;
     public int alertness;
+    public int focus;
+    public int attention;
     public boolean caffeinated;
     public boolean nicotine;
     public boolean food;
     public boolean alcohol;
     public String device_id;
 
-    public ReactionTestResult(String device_id, String email, ArrayList<Long> measurements, int numberOfTaps, int numberOfErrors, long startTasksTime,
+    public ReactionTestResult(String device_id, String email, String measurements, int numberOfTaps, int numberOfErrors, long startTasksTime,
                               long endTasksTime, boolean taskCompleted, int alertness, boolean caffeinated,
-                              boolean nicotine, boolean food, boolean alcohol) {
+                              boolean nicotine, boolean food, boolean alcohol, int focus, int attention) {
 
         this.device_id = device_id;
         this.email = email;
@@ -40,6 +42,9 @@ public class ReactionTestResult {
         this.nicotine = nicotine;
         this.food = food;
         this.alcohol = alcohol;
+
+        this.focus = focus;
+        this.attention = attention;
     }
 
 }

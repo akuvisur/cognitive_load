@@ -80,11 +80,20 @@
     <string name="task_survey_sleepiness">How alert are you feeling right now?</string>
     <string name="task_survey_sleepy">super sleepy</string>
     <string name="task_survey_alert">super alert</string>
+
+    <string name="task_survey_focus">How well did you manage to focus on performing the reaction test?</string>
+    <string name="task_survey_notfocused">not focused</string>
+    <string name="task_survey_veryfocused">focused</string>
+
     <string name="task_survey_error_alert">Oops! Please specify your level of alertness.</string>
+    <string name="task_survey_error_generic">Oops! Please answer both questions.</string>
+
     <string name="task_survey_caffeination">I had a caffeinated drink within the last hour.</string>
     <string name="task_survey_nicotine">I had a product that contained nicotine within the last hour.</string>
     <string name="task_survey_food">I had a meal or a large snack within the last hour.</string>
     <string name="task_survey_alcohol">I had one or more units of alcohol within the last hour.</string>
+
+    <string name="task_survey_othertask">Did you pay attention to anything else while doing this reaction test?</string>
 
     <string name="survey_strongly_disagree">Strongly disagree</string>
     <string name="survey_strongly_agree">Strongly agree</string>
@@ -94,6 +103,9 @@
     <string name="survey_scale_3">3</string>
     <string name="survey_scale_4">4</string>
     <string name="survey_scale_5">5</string>
+    <string name="survey_scale_yes">Yes</string>
+    <string name="survey_scale_no">No</string>
+
     <string name="survey_error_title">Error</string>
     <string name="survey_error_ok">OK</string>
     <string name="survey_error_message_1">Please rate the first statement.</string>
@@ -102,7 +114,7 @@
     <string name="survey_thanks">Thanks!</string>
 
     <!-- Email survey -->
-    <string name="survey_email">Please give an email address associated to the study you are participating in:</string>
+    <string name="survey_email">Please give your participant ID associated to the study you are participating in:</string>
 
     <!-- Consent Form-->
     <string name="con_title">Consent to Participate</string>

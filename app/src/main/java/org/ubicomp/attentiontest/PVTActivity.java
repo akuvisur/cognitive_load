@@ -244,16 +244,20 @@ public class PVTActivity extends AppCompatActivity {
         Log.i(TAG, "# of measurements: " + measurements.size() + ", avg: " + avg);
         Log.i(TAG, "false positives (touches): " + numberOfTaps);
 
-        //logging results
-        int alertness = Util.getInt(this, CircogPrefs.LEVEL_ALERTNESS, -1);
-        boolean caffeinated = Util.getBool(this, CircogPrefs.CAFFEINATED, false);
-        boolean nicotine = Util.getBool(this, CircogPrefs.NICOTINE, false);
-        boolean food = Util.getBool(this, CircogPrefs.FOOD, false);
-        boolean alcohol = Util.getBool(this, CircogPrefs.ALCOHOL, false);
         boolean taskCompleted = measurements.size()==total_tasks;
-        LogManager.logPVT(measurements, numberOfTaps, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated);
+        Util.putBool(this, "taskCompleted", taskCompleted);
+        Util.putString(this, "measurements", measurements.toString());
+        Util.putInt(this, "falsePositives", numberOfTaps);
+        Util.putInt(this, "numErrors", numberOfErrors);
+        Util.putLong(this, "testStart", startTasksTime);
+        Util.putLong(this, "testEnd", endTasksTime);
+
         allTasksCompleted = true;
 
+        // show last survey
+        final Intent intent = new Intent(this, PostTaskSurveyActivity.class);
+        startActivity(intent);
+        /*
         // store results
         Log.d(TAG, "Starting result storing");
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -277,6 +281,8 @@ public class PVTActivity extends AppCompatActivity {
 
         // mark when the last task was done
         Util.storeLastTask(getApplicationContext());
+        */
+
     }
 
     /**

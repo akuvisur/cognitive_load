@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/participation_email_input"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:textSize="16sp"
                 android:textColor="@color/cardview_dark_background"
                 android:layout_marginBottom="16dp"/>
