@@ -9,6 +9,7 @@ import java.util.ArrayList;
 @IgnoreExtraProperties
 public class ReactionTestResult {
 
+    public int work;
     public String email;
     public String measurements;
     public int numberOfTaps;
@@ -27,7 +28,7 @@ public class ReactionTestResult {
 
     public ReactionTestResult(String device_id, String email, String measurements, int numberOfTaps, int numberOfErrors, long startTasksTime,
                               long endTasksTime, boolean taskCompleted, int alertness, boolean caffeinated,
-                              boolean nicotine, boolean food, boolean alcohol, int focus, int attention) {
+                              boolean nicotine, boolean food, boolean alcohol, int focus, int attention, int work) {
 
         this.device_id = device_id;
         this.email = email;
@@ -45,6 +46,7 @@ public class ReactionTestResult {
 
         this.focus = focus;
         this.attention = attention;
+        this.work = work;
     }
 
 }

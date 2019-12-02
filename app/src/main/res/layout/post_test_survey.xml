@@ -176,6 +176,48 @@
                 </RadioGroup>
 
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/cardview_light_background">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_survey_holiday"
+                    android:textSize="16sp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:layout_marginBottom="0dp"/>
+                <RadioGroup
+                    android:id="@+id/survey_holiday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <RadioButton
+                        android:id="@+id/survey_holiday_0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/survey_scale_work"/>
+                    <RadioButton
+                        android:id="@+id/survey_holiday_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/survey_scale_holiday"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 

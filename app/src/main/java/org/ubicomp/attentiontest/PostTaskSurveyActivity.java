@@ -24,6 +24,7 @@ public class PostTaskSurveyActivity extends Activity {
         private Button buttonSubmit;
         private RadioGroup radioAttention;
         private RadioGroup radioFocus;
+        private RadioGroup radioWork;
         private CardView errorMessage;
         private CardView studyCompleted;
 
@@ -38,6 +39,7 @@ public class PostTaskSurveyActivity extends Activity {
             buttonSubmit = (Button) findViewById(R.id.survey_send);
             radioAttention = (RadioGroup) findViewById(R.id.survey_focus);
             radioFocus = (RadioGroup) findViewById(R.id.survey_yn);
+            radioWork = (RadioGroup) findViewById(R.id.survey_holiday);
 
             errorMessage = (CardView) findViewById(R.id.error_message);
             studyCompleted = (CardView) findViewById(R.id.cardview_study_completed);
@@ -48,8 +50,8 @@ public class PostTaskSurveyActivity extends Activity {
                     int attention = Util.getRating(radioAttention);
                     // 0 = no 1 = yes
                     int focus = Util.getRating(radioFocus);
-
-                    if(attention==-1 || focus==-1) {
+                    int work = Util.getRating(radioWork);
+                    if(attention==-1 || focus==-1 ) {
                         errorMessage.setVisibility(View.VISIBLE);
                     } else {
                         // get previous results
@@ -69,7 +71,7 @@ public class PostTaskSurveyActivity extends Activity {
                         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
                         ReactionTestResult result = new ReactionTestResult(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), measurements, numberOfTaps, numberOfErrors, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol, focus, attention);
+                                Settings.Secure.ANDROID_ID), Util.getEmail(getApplicationContext()), measurements, numberOfTaps, numberOfErrors, startTasksTime, endTasksTime, taskCompleted, alertness, caffeinated, nicotine, food, alcohol, focus, attention, work);
                         mDatabase.child("reaction_tests").child(String.valueOf(System.currentTimeMillis())).setValue(result)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override

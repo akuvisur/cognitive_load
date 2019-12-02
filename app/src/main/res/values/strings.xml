@@ -105,6 +105,8 @@
     <string name="survey_scale_5">5</string>
     <string name="survey_scale_yes">Yes</string>
     <string name="survey_scale_no">No</string>
+    <string name="survey_scale_work">Workday</string>
+    <string name="survey_scale_holiday">Holiday</string>
 
     <string name="survey_error_title">Error</string>
     <string name="survey_error_ok">OK</string>
@@ -143,5 +145,6 @@
 
     <!--SensorManager-->
     <string name="sensor_service_name">Circog Sensor Manager Service</string>
+    <string name="task_survey_holiday">Is today a workday or a holiday?</string>
 
 </resources>
