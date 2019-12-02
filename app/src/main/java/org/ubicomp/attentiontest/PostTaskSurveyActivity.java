@@ -41,7 +41,7 @@ public class PostTaskSurveyActivity extends Activity {
 
             errorMessage = (CardView) findViewById(R.id.error_message);
             studyCompleted = (CardView) findViewById(R.id.cardview_study_completed);
-            
+
             buttonSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

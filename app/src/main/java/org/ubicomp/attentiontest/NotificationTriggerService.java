@@ -10,8 +10,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Build;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -29,6 +31,8 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class NotificationTriggerService extends Service implements CircogPrefs {
 
     private static final String TAG = NotificationTriggerService.class.getSimpleName();
@@ -39,6 +43,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     public static final int    NOTIFICATION_ID  = 0;
     public static final int ONGOING_NOTIFICATION_ID = 1;
     private final String channel_id = "circog_reminder";
+    private final String channel_id2 = "circog_sticky";
 
     private static NotificationTriggerService instance;
     private Timer showNotifTimer;
@@ -92,11 +97,23 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
 
         createNotificationChannel();
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            String packageName = getApplicationContext().getPackageName();
+            PowerManager pm = (PowerManager) getApplicationContext().getSystemService(Context.POWER_SERVICE);
+            if (!pm.isIgnoringBatteryOptimizations(packageName)) {
+                Intent intent = new Intent();
+                intent.setAction(android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("package:" + packageName));
+                getApplicationContext().startActivity(intent);
+            }
+        }
+
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent =
                 PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification =
-                new Notification.Builder(this, channel_id)
+                new Notification.Builder(this, channel_id2)
                         .setContentTitle(getText(R.string.notification_title))
                         .setContentText(getText(R.string.notification_message))
                         .setSmallIcon(R.drawable.circog_notificon)
@@ -126,7 +143,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     public void onDestroy() {
 
         super.onDestroy();
-        //startService(new Intent(this, NotificationTriggerService.class));
+        startService(new Intent(this, NotificationTriggerService.class));
 
     }
 
@@ -214,7 +231,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         //TODO: spread this more across day?
         int delayMs;
         // between two and three hours?
-        int randomDelay = Util.randInt(TASK_DELAY, EVERY_HOUR); //120 - 180mins
+        int randomDelay = Util.randInt(TASK_DELAY, EVERY_HOUR*3); //120 - 180mins
         if(DEBUG_MODE) {
             delayMs = EVERY_MINUTE/2;
         } else {
@@ -262,8 +279,9 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
     }
 
     public static void removeNotification(Context context) {
+        Log.d(TAG, "Notifications removed");
         NotificationManager notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notifManager.cancelAll();
+        notifManager.cancel(NOTIFICATION_ID);
         notificationIsShown = false;
         Util.putBool(context, NOTIF_POSTED, false);
     }
@@ -390,10 +408,14 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel channel = new NotificationChannel(channel_id, name, importance);
             channel.setDescription(description);
+            NotificationChannel channel2 = new NotificationChannel(channel_id2, "sticky notification", NotificationManager.IMPORTANCE_LOW);
+            channel.setDescription(description);
+
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
+            notificationManager.createNotificationChannel(channel2);
             Log.d(TAG, "Notification channel created");
         }
     }

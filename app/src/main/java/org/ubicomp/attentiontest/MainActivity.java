@@ -1,7 +1,11 @@
 package org.ubicomp.attentiontest;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 
 /**
@@ -63,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         TaskList.initTaskList(getApplicationContext());
+
+        //make sure NotificationTriggerService is running
+        startForegroundService(new Intent(getApplicationContext(), NotificationTriggerService.class));
+
     }
 
     @Override
@@ -73,14 +83,24 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "+ onResume()");
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            String packageName = getApplicationContext().getPackageName();
+            PowerManager pm = (PowerManager) getApplicationContext().getSystemService(Context.POWER_SERVICE);
+            if (!pm.isIgnoringBatteryOptimizations(packageName)) {
+                Intent intent = new Intent();
+                intent.setAction(android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                intent.setData(Uri.parse("package:" + packageName));
+                getApplicationContext().startActivity(intent);
+            }
+        }
+
         Util.circogIsRunning(getApplicationContext(), true);
         //track whether app has been opened through a notification or explicit app launch
         boolean notifTriggered = Util.getBool(getApplicationContext(), CircogPrefs.NOTIF_CLICKED, false);
         LogManager.logAppLaunch(notifTriggered);
         Util.putBool(getApplicationContext(), CircogPrefs.NOTIF_CLICKED, false);
-
-        //make sure NotificationTriggerService is running
-        startService(new Intent(this, NotificationTriggerService.class));
+        NotificationTriggerService.removeNotification(getApplicationContext());
 
         // check that email exists
         String email = Util.getEmail(this);
@@ -149,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        NotificationTriggerService.removeNotification(getApplicationContext());
     }
 
     @Override
