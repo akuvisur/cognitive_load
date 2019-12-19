@@ -124,6 +124,16 @@ tools:context=".MainActivity">
         android:text="@string/main_launch_mot"
         android:textSize="12sp" />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        android:text="@string/main_completed"
+        android:id="@+id/main_completed"
+        android:textSize="16sp" />
+
+
 </LinearLayout>
 
 </ScrollView>

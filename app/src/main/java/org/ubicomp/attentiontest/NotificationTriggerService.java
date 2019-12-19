@@ -113,7 +113,7 @@ public class NotificationTriggerService extends Service implements CircogPrefs {
         PendingIntent pendingIntent =
                 PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification =
-                new Notification.Builder(this, channel_id2)
+                new NotificationCompat.Builder(this, channel_id2)
                         .setContentTitle(getText(R.string.notification_title))
                         .setContentText(getText(R.string.notification_message))
                         .setSmallIcon(R.drawable.circog_notificon)

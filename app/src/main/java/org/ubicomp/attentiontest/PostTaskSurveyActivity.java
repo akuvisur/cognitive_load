@@ -90,6 +90,8 @@ public class PostTaskSurveyActivity extends Activity {
                         // mark when the last task was done
                         Util.storeLastTask(getApplicationContext());
 
+                        Util.putInt(getApplicationContext(), "completed_tasks", Util.getInt(getApplicationContext(), "completed_tasks", 0)+1);
+
                         finish();
                     }
 

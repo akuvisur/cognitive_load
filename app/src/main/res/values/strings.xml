@@ -15,6 +15,7 @@
     <string name="main_launch_pvt">Psychomotor Vigilance Test</string>
     <string name="main_launch_gonogo">Go/No-Go Task</string>
     <string name="main_launch_mot">Multiple Object Tracking</string>
+    <string name="main_completed">Reaction tests completed: </string>
     <string name="title_activity_pvt">PVTActivity</string>
     <string name="task_dialog_finish">Excellent! You made it through all tasks!</string>
     <string name="task_toast_finish">Thanks! That\'s it!</string>
@@ -23,7 +24,7 @@
     <string name="task_dialog_next_tasks">Congratulations! You made it! %1$d tasks left.</string>
     <string name="study_completed">Congratulations! You have officially completed the minimum amount of days required for this study. However, you can keep using the app. Thanks!</string>
 
-    <string name="participation_email">You registered to this study with the following email address:</string>
+    <string name="participation_email">You registered to this study with the following participant ID:</string>
 
     <!--PVT ACTIVITY-->
     <string name="pvt_explanation">Tap the screen as soon as a number appears. Numbers will appear at random times. The test lasts about 2 minutes.</string>

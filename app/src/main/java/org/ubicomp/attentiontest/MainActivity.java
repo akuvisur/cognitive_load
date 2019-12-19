@@ -26,6 +26,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private TextView tasksCompleted;
     private static final String	TAG	= MainActivity.class.getSimpleName();
 
     public static final int[] COMPLETE_TASKLIST = {PVTActivity.TASK_ID}; //{MOTActivity.TASK_ID};
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         pvt = findViewById(R.id.btn_launch_pvt);
         nogo = findViewById(R.id.btn_launch_gonogo);
         mot = findViewById(R.id.btn_launch_mot);
+
+        tasksCompleted = (TextView) findViewById(R.id.main_completed);
 
         nogo.setEnabled(false);
         mot.setEnabled(false);
@@ -71,8 +74,12 @@ public class MainActivity extends AppCompatActivity {
         TaskList.initTaskList(getApplicationContext());
 
         //make sure NotificationTriggerService is running
-        startForegroundService(new Intent(getApplicationContext(), NotificationTriggerService.class));
-
+        startService(new Intent(getApplicationContext(), NotificationTriggerService.class));
+        /*
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
+            startForeground();
+        }
+         */
     }
 
     @Override
@@ -119,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        tasksCompleted.setText("Reaction tests completed: " + Util.getInt(getApplicationContext(), "completed_tasks", 0));
         /*
         //check whether demographics have been recorded
         boolean provided = Util.getBool(getApplicationContext(), CircogPrefs.DEMOGRAPHICS_PROVIDED, false);
